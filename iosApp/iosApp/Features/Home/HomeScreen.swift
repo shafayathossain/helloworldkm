@@ -1,7 +1,15 @@
+//
+//  HomeScreen.swift
+//  iosApp
+//
+//  Created by Shafayat Hossain on 20/8/23.
+//  Copyright © 2023 orgName. All rights reserved.
+//
+
 import SwiftUI
 import shared
 
-struct ContentView: View {
+struct HomeView: View {
     
     @EnvironmentObject var router: AppRouter<Route>
     
@@ -22,8 +30,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
-	}
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
 }
