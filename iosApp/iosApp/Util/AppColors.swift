@@ -6,14 +6,6 @@
 //  Copyright © 2023 orgName. All rights reserved.
 //
 
-//
-//  AppColors.swift
-//  TaskStationIos
-//
-//  Created by Mohtasim Abrar Samin on 20/6/23.
-//  Copyright © 2023 orgName. All rights reserved.
-//
-
 import Foundation
 import SwiftUI
 

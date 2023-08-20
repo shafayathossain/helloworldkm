@@ -1,0 +1,18 @@
+CREATE TABLE Preferences(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    key TEXT UNIQUE NOT NULL,
+    value TEXT NOT NULL
+);
+
+INSERT INTO Preferences(key, value) VALUES ("message", "Hello World from DB!");
+
+getPreferences:
+SELECT * FROM Preferences;
+
+insertIntoPreference:
+INSERT OR REPLACE INTO Preferences(key, value)
+VALUES(?, ?);
+
+deleteAKeyFromPreference:
+DELETE FROM Preferences
+WHERE key = ?;

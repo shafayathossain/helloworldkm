@@ -23,11 +23,11 @@ class DIRegister {
 //        registerHomeViewModel()
     }
     
-//    private static func registerDatabaseFactory() {
-//        container.register {
-//            DatabaseDriverFactory()
-//        }
-//    }
+    private static func registerDatabaseFactory() {
+        container.register {
+            DatabaseDriverFactory()
+        }
+    }
 //
 //    private static func registerApiClientFactory() {
 //        container.register {
