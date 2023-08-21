@@ -37,6 +37,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		D4E533CE2A9316AE009AA67F /* AppDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E533CD2A9316AE009AA67F /* AppDropdown.swift */; };
+		D4E533D22A9352D5009AA67F /* AppToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E533D12A9352D5009AA67F /* AppToggleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +86,7 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E533CD2A9316AE009AA67F /* AppDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDropdown.swift; sourceTree = "<group>"; };
+		D4E533D12A9352D5009AA67F /* AppToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToggleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D4E533CD2A9316AE009AA67F /* AppDropdown.swift */,
+				D4E533D12A9352D5009AA67F /* AppToggleButton.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				0C698C8A2A92031C005F70C0 /* HomeViewModel.swift in Sources */,
 				0C698C632A91FFC6005F70C0 /* Route.swift in Sources */,
 				0C698C612A91FFA3005F70C0 /* Router.swift in Sources */,
+				D4E533D22A9352D5009AA67F /* AppToggleButton.swift in Sources */,
 				0C698C6E2A92004B005F70C0 /* DebugLog.swift in Sources */,
 				0C698C712A9200FD005F70C0 /* AppColors.swift in Sources */,
 				0C698C862A92029E005F70C0 /* AppFonts.swift in Sources */,
