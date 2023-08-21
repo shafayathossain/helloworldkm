@@ -75,8 +75,67 @@ extension Font {
     }
     
     
-    static func poppins(_ type: Poppins, size: CGFloat = 26) -> Font {
+    static private func poppins(_ type: Poppins, size: CGFloat = 26) -> Font {
         return .custom(type.value, size: size)
     }
     
+    static func displayLarge() -> Font {
+        return poppins(Poppins.regular, size: 57)
+    }
+    
+    static func displayMedium() -> Font {
+        return poppins(Poppins.regular, size: 45)
+    }
+    
+    static func displaySmall() -> Font {
+        return poppins(Poppins.regular, size: 36)
+    }
+    
+    static func headlineLarge() -> Font {
+        return poppins(Poppins.regular, size: 32)
+    }
+    
+    static func headlineMedium() -> Font {
+        return poppins(Poppins.regular, size: 28)
+    }
+    
+    static func headlineSmall() -> Font {
+        return poppins(Poppins.regular, size: 24)
+    }
+    
+    static func titleLarge() -> Font {
+        return poppins(Poppins.regular, size: 22)
+    }
+    
+    static func titleMedium() -> Font {
+        return poppins(Poppins.medium, size: 16)
+    }
+    
+    static func titleSmall() -> Font {
+        return poppins(Poppins.medium, size: 14)
+    }
+    
+    static func labelLarge() -> Font {
+        return poppins(Poppins.medium, size: 14)
+    }
+    
+    static func labelMedium() -> Font {
+        return poppins(Poppins.medium, size: 12)
+    }
+    
+    static func labelSmall() -> Font {
+        return poppins(Poppins.medium, size: 11)
+    }
+    
+    static func bodyLarge() -> Font {
+        return poppins(Poppins.regular, size: 16)
+    }
+    
+    static func bodyMedium() -> Font {
+        return poppins(Poppins.regular, size: 14)
+    }
+    
+    static func bodySmall() -> Font {
+        return poppins(Poppins.regular, size: 12)
+    }
 }
