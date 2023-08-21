@@ -79,63 +79,48 @@ extension Font {
         return .custom(type.value, size: size)
     }
     
-    static func displayLarge() -> Font {
-        return poppins(Poppins.regular, size: 57)
-    }
+    static var displayLarge: Font = poppins(Poppins.regular, size: 57)
     
-    static func displayMedium() -> Font {
-        return poppins(Poppins.regular, size: 45)
-    }
     
-    static func displaySmall() -> Font {
-        return poppins(Poppins.regular, size: 36)
-    }
+    static var displayMedium: Font = poppins(Poppins.regular, size: 45)
     
-    static func headlineLarge() -> Font {
-        return poppins(Poppins.regular, size: 32)
-    }
     
-    static func headlineMedium() -> Font {
-        return poppins(Poppins.regular, size: 28)
-    }
+    static var displaySmall: Font = poppins(Poppins.regular, size: 36)
     
-    static func headlineSmall() -> Font {
-        return poppins(Poppins.regular, size: 24)
-    }
     
-    static func titleLarge() -> Font {
-        return poppins(Poppins.regular, size: 22)
-    }
+    static var headlineLarge: Font = poppins(Poppins.regular, size: 32)
     
-    static func titleMedium() -> Font {
-        return poppins(Poppins.medium, size: 16)
-    }
     
-    static func titleSmall() -> Font {
-        return poppins(Poppins.medium, size: 14)
-    }
+    static var headlineMedium: Font = poppins(Poppins.regular, size: 28)
     
-    static func labelLarge() -> Font {
-        return poppins(Poppins.medium, size: 14)
-    }
     
-    static func labelMedium() -> Font {
-        return poppins(Poppins.medium, size: 12)
-    }
+    static var headlineSmall: Font = poppins(Poppins.regular, size: 24)
     
-    static func labelSmall() -> Font {
-        return poppins(Poppins.medium, size: 11)
-    }
     
-    static func bodyLarge() -> Font {
-        return poppins(Poppins.regular, size: 16)
-    }
+    static var titleLarge: Font = poppins(Poppins.regular, size: 22)
     
-    static func bodyMedium() -> Font {
-        return poppins(Poppins.regular, size: 14)
-    }
     
-    static func bodySmall() -> Font {
-        return poppins(Poppins.regular, size: 12)
-    }
+    static var titleMedium: Font = poppins(Poppins.medium, size: 16)
+    
+    
+    static var titleSmall: Font = poppins(Poppins.medium, size: 14)
+    
+    
+    static var labelLarge: Font = poppins(Poppins.medium, size: 14)
+    
+    
+    static var labelMedium: Font = poppins(Poppins.medium, size: 12)
+    
+    
+    static var labelSmall: Font = poppins(Poppins.medium, size: 11)
+    
+    
+    static var bodyLarge: Font = poppins(Poppins.regular, size: 16)
+    
+    
+    static var bodyMedium: Font = poppins(Poppins.regular, size: 14)
+    
+    
+    static var bodySmall: Font = poppins(Poppins.regular, size: 12)
+    
 }

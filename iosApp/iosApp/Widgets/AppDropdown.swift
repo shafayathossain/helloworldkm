@@ -27,7 +27,7 @@ struct AppDropdown: View {
             Button(action: {}) {
                 HStack {
                     Text(selectedOption < 0 ? "Select an option" : options[selectedOption])
-                        .font(Font.bodyLarge())
+                        .font(.bodyLarge)
                         .foregroundColor(Color.OnSurfaceVariant)
                     Spacer()
                     Image(systemName: "arrowtriangle.down.fill")

@@ -38,6 +38,7 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		D4E533CE2A9316AE009AA67F /* AppDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E533CD2A9316AE009AA67F /* AppDropdown.swift */; };
 		D4E533D22A9352D5009AA67F /* AppToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E533D12A9352D5009AA67F /* AppToggleButton.swift */; };
+		D4E533D42A9353C7009AA67F /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E533D32A9353C7009AA67F /* AppTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +88,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E533CD2A9316AE009AA67F /* AppDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDropdown.swift; sourceTree = "<group>"; };
 		D4E533D12A9352D5009AA67F /* AppToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToggleButton.swift; sourceTree = "<group>"; };
+		D4E533D32A9353C7009AA67F /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			children = (
 				D4E533CD2A9316AE009AA67F /* AppDropdown.swift */,
 				D4E533D12A9352D5009AA67F /* AppToggleButton.swift */,
+				D4E533D32A9353C7009AA67F /* AppTextField.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				0C698C5F2A91FF86005F70C0 /* RoutingView.swift in Sources */,
 				D4E533CE2A9316AE009AA67F /* AppDropdown.swift in Sources */,
 				0C698C5C2A91F934005F70C0 /* EnvironmentValues.swift in Sources */,
+				D4E533D42A9353C7009AA67F /* AppTextField.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				0C698C672A91FFF7005F70C0 /* NavTitleModifier.swift in Sources */,
 				0C698C562A91F87B005F70C0 /* DIContainer.swift in Sources */,
