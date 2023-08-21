@@ -36,6 +36,7 @@
 		0C698C8C2A92033C005F70C0 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C698C8B2A92033C005F70C0 /* HomeScreen.swift */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		D4E533CE2A9316AE009AA67F /* AppDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E533CD2A9316AE009AA67F /* AppDropdown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +84,7 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4E533CD2A9316AE009AA67F /* AppDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDropdown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				D4E533CC2A93169A009AA67F /* Widgets */,
 				0C698C872A920305005F70C0 /* Features */,
 				0C698C6F2A9200EE005F70C0 /* Util */,
 				0C698C5D2A91FF76005F70C0 /* Router */,
@@ -211,6 +214,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4E533CC2A93169A009AA67F /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				D4E533CD2A9316AE009AA67F /* AppDropdown.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				0C698C862A92029E005F70C0 /* AppFonts.swift in Sources */,
 				0C698C582A91F895005F70C0 /* DIContainerKey.swift in Sources */,
 				0C698C5F2A91FF86005F70C0 /* RoutingView.swift in Sources */,
+				D4E533CE2A9316AE009AA67F /* AppDropdown.swift in Sources */,
 				0C698C5C2A91F934005F70C0 /* EnvironmentValues.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				0C698C672A91FFF7005F70C0 /* NavTitleModifier.swift in Sources */,
