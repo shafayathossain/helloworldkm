@@ -3,19 +3,20 @@ package com.shafayat.helloworldkm.android.navigation.navgraph
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import com.shafayat.helloworldkm.android.features.home.HomeScreen
+import com.shafayat.helloworldkm.android.features.main.MainScreen
 import com.shafayat.helloworldkm.android.navigation.Route
 
-fun NavGraphBuilder.homeNavGraph(
+fun NavGraphBuilder.MainNavGraph(
     navHostController: NavHostController
 ) {
     navigation(
-        startDestination = Route.homeScreen,
-        route = Route.homeRoute
+        startDestination = Route.mainScreen,
+        route = Route.mainRoute
     ) {
-        composable(Route.homeScreen) {
-            HomeScreen.BaseComposable(navHostController)
+        composable(Route.mainScreen) {
+            MainScreen.BaseComposable(navHostController, rememberNavController())
         }
     }
 }

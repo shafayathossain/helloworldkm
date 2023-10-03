@@ -1,4 +1,4 @@
-package com.shafayat.helloworldkm.android.features.home
+package com.shafayat.helloworldkm.android.features.contents
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,10 +13,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.shafayat.helloworldkm.android.R
 import com.shafayat.helloworldkm.android.base.BaseScreen
+import com.shafayat.helloworldkm.android.features.profile.ProfileScreen
 import com.shafayat.helloworldkm.android.ui.theme.AppTheme
 
 
-object HomeScreen : BaseScreen<HomeViewModel>() {
+object ContentsScreen : BaseScreen<ProfileViewModel>() {
 
     override val showBackArrow: Boolean = false
     override val showTopBar: Boolean = false
@@ -28,20 +29,20 @@ object HomeScreen : BaseScreen<HomeViewModel>() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = stringResource(id = R.string.home))
+            Text(text = stringResource(id = R.string.contents))
         }
     }
 
     @Composable
-    override fun getViewModel(): HomeViewModel {
+    override fun getViewModel(): ProfileViewModel {
         return hiltViewModel()
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun LoginScreenPreview() {
+private fun ContentsScreenPreview() {
     AppTheme() {
-        HomeScreen.BaseComposable(rememberNavController())
+        ProfileScreen.BaseComposable(rememberNavController())
     }
 }
