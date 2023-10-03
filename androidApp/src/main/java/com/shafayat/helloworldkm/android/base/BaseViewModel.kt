@@ -12,6 +12,8 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel<E : BaseEvent> : ViewModel() {
 
+    private val _baseUiEvent = Channel<BaseUiEvent>()
+    val baseUiEvent = _baseUiEvent.receiveAsFlow()
     abstract fun onEvent(event: E)
 
     var baseState by mutableStateOf(BaseUiState())
@@ -44,9 +46,6 @@ abstract class BaseViewModel<E : BaseEvent> : ViewModel() {
             }
         }
     }
-
-    private val _baseUiEvent = Channel<BaseUiEvent>()
-    val baseUiEvent = _baseUiEvent.receiveAsFlow()
 
     protected fun sendBaseUiEvent(event: BaseUiEvent) {
         viewModelScope.launch {
