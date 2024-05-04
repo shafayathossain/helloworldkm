@@ -20,9 +20,9 @@ struct HomeView: View {
             Spacer()
             Text(greet)
             Button(action: {
-                router.pop()
+                router.push(.dummyScreen)
             }) {
-                Text("Back")
+                Text(verbatim: "Go To Dummy")
             }
             Spacer()
         }

@@ -1,9 +1,9 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("app.cash.sqldelight") version "2.0.0"
-    id("com.google.devtools.ksp") version "1.9.0-1.0.12"
-    id("com.rickclephas.kmp.nativecoroutines") version "1.0.0-ALPHA-17"
+    id("app.cash.sqldelight") version "2.0.2"
+    id("com.google.devtools.ksp") version "1.9.23-1.0.20"
+    id("com.rickclephas.kmp.nativecoroutines") version "1.0.0-ALPHA-28"
     kotlin("plugin.serialization") version "1.9.0"
 }
 
@@ -19,13 +19,13 @@ sqldelight {
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    val sqlDelightVersion = "2.0.0"
-    val ktorVersion = "2.3.3"
-    val coroutineVersion = "1.7.3"
+    val sqlDelightVersion = "2.0.2"
+    val ktorVersion = "2.3.5"
+    val coroutineVersion = "1.8.0"
 
     targetHierarchy.default()
 
-    android {
+    androidTarget {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
@@ -88,7 +88,7 @@ kotlin {
 
 android {
     namespace = "com.shafayat.helloworldkm"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 24
     }

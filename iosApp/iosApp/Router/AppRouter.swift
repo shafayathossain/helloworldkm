@@ -45,14 +45,21 @@ public class AppRouter<T: Equatable>: ObservableObject {
     private let logger: Logger
     
     private var _routes: [T] = []
+    private var _alertRoutes: [T] = []
+    
+//    @Published var alertContent: AnyView? = nil
     
     public var routes: [T] {
         return _routes
     }
     
+    var initial: T? = nil
+
     var onPush: ((T) -> Void)?
     var onPushToRoot: ((T) -> Void)?
+    var onPushAlert: ((T) -> Void)?
     var onPopLast: ((Int, Bool) -> Void)?
+    var onDismissAlert: (() -> Void)?
     
 ///   Initializes the AppRouter with an optional initial route and a debug mode.
 ///
@@ -65,10 +72,10 @@ public class AppRouter<T: Equatable>: ObservableObject {
         
         
         if let initial = initial {
+            self.initial = initial
             push(initial)
         }
     }
-    
     
     /**
     Pushes a new route onto the navigation stack.
@@ -97,6 +104,12 @@ public class AppRouter<T: Equatable>: ObservableObject {
         self.onPushToRoot?(route)
     }
 
+    
+    public func pushAlert(_ route: T) {
+        self._alertRoutes.append(route)
+        self.onPushAlert?(route)
+    }
+    
     /**
     Pops the last route from the navigation stack.
 
@@ -106,7 +119,13 @@ public class AppRouter<T: Equatable>: ObservableObject {
        - animated: A Boolean value that controls whether the pop operation should be animated.
     */
     public func pop(animated: Bool = true) {
-        if self._routes.count > 1 {
+        if(self._alertRoutes.count >= 1) {
+            let popped = self._alertRoutes.removeLast()
+            logger.log("UIPilot - \(popped) route popped.")
+            onDismissAlert?()
+            NotificationCenter.default.post(name: .alertDismissed, object: nil)
+
+        } else if self._routes.count >= 1 {
             let popped = self._routes.removeLast()
             logger.log("UIPilot - \(popped) route popped.")
             onPopLast?(1, animated)
@@ -168,23 +187,21 @@ public class AppRouter<T: Equatable>: ObservableObject {
 ///
 /// The `navigationStyle` object is used to control the appearance of the navigation bar. It holds the state of the navigation bar's title and whether the navigation bar is hidden or not. It's also injected into the environment so it can be accessed by child views.
 ///
-/// - Parameter pilot: An instance of `AppRouter` which manages the navigation stack of your app.
+/// - Parameter router: An instance of `AppRouter` which manages the navigation stack of your app.
 /// - Parameter routeMap: A closure that takes a route of type `T` and returns a SwiftUI `Screen` associated with the route.
 ///
 /// The body of the `AppRouterHost` contains a `NavigationControllerHost` which takes in the navigation bar title, navigation bar hidden state, the router, and the route map. This sets up the navigation controller with the appropriate settings based on the `AppRouter` and `NavigationStyle`.
 ///
-/// The `AppRouterHost` also sets the environment objects `pilot` (the AppRouter) and `navigationStyle`, so that these objects can be accessed by any child views.
+/// The `AppRouterHost` also sets the environment objects `router` (the AppRouter) and `navigationStyle`, so that these objects can be accessed by any child views.
 public struct AppRouterHost<T: Equatable, Screen: View>: View {
     
-    @StateObject
-    var navigationStyle = NavigationStyle()
+    @StateObject var navigationStyle = NavigationStyle()
     
-    let pilot: AppRouter<T>
-    @ViewBuilder
-    let routeMap: (T) -> Screen
+    let router: AppRouter<T>
+    @ViewBuilder let routeMap: (T) -> Screen
     
-    public init(_ pilot: AppRouter<T>, @ViewBuilder _ routeMap: @escaping (T) -> Screen) {
-        self.pilot = pilot
+    public init(_ router: AppRouter<T>, @ViewBuilder _ routeMap: @escaping (T) -> Screen) {
+        self.router = router
         self.routeMap = routeMap
     }
     
@@ -193,10 +210,10 @@ public struct AppRouterHost<T: Equatable, Screen: View>: View {
             navTitle: navigationStyle.title,
             isLargeTitle: navigationStyle.titleDisplayMode == .large,
             navHidden: navigationStyle.isHidden,
-            router: pilot,
+            router: router,
             routeMap: routeMap
         )
-        .environmentObject(pilot)
+        .environmentObject(router)
         .environment(\.uipNavigationStyle, navigationStyle)
         .ignoresSafeArea()
         .background(Color.Surface)
@@ -293,6 +310,12 @@ struct NavHiddenModifier: ViewModifier {
                 }
             }
     }
+}
+
+class NotificationNavigationState: ObservableObject {
+    static let shared = NotificationNavigationState()
+
+    @Published var selectedNotificationId: Int64?
 }
 
 protocol Logger {

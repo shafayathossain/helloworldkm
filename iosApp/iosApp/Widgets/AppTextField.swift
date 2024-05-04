@@ -66,7 +66,7 @@ struct AdvancedMaterialTextField: View {
             
             if showError {
                 HStack {
-                    Text("Error: Invalid input")
+                    Text(verbatim: "Error: Invalid input")
                         .font(.caption)
                         .foregroundColor(.red)
                     Spacer()

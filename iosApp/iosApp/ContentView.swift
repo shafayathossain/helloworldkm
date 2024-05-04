@@ -14,7 +14,7 @@ struct ContentView: View {
             Button(action: {
                 router.pop()
             }) {
-                Text("Back")
+                Text(verbatim: "Back")
             }
             Spacer()
         }

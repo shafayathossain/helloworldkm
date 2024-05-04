@@ -14,7 +14,7 @@ struct AppToggleButton: View {
     var body: some View {
         VStack {
             Toggle(isOn: $isOn) {
-                Text("Toggle Switch")
+                Text(verbatim: "Toggle Switch")
             }
             .labelsHidden()
             .toggleStyle(SwitchToggleStyle(tint: .Primary)) // Change the tint color to your desired color

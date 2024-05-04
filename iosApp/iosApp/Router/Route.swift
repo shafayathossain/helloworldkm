@@ -10,6 +10,7 @@ import Foundation
 
 enum Route: Equatable, Hashable {
     case homeScreen
+    case dummyScreen
 }
 
 
